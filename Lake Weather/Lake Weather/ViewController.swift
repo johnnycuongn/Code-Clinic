@@ -7,6 +7,20 @@
 //
 
 import UIKit
+import Foundation
+import RealmSwift
+
+class DayData2015: Object {
+    let date = RealmOptional<Int>()
+    @objc dynamic var time: String? = nil
+    let AirTemp = RealmOptional<Double>()
+    let BarometricPress = RealmOptional<Double>()
+    let DewPoint = RealmOptional<Double>()
+    let RelativeHumidity = RealmOptional<Double>()
+    let WindDir = RealmOptional<Double>()
+    let WindGust = RealmOptional<Int>()
+    let WindSpeed = RealmOptional<Double>()
+}
 
 class ViewController: UIViewController {
     @IBOutlet weak var activityView: UIView!
@@ -19,6 +33,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var startPicker: UIDatePicker!
     @IBOutlet weak var endPicker: UIDatePicker!
     
+    var realm = try! Realm()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -27,7 +43,25 @@ class ViewController: UIViewController {
     }
     
     func loadRealm() {
+        let fileManger = FileManager.default
+        let documentURL = fileManger.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("dayData.realm")
+        let baseURL = Bundle.main.url(forResource: "dayData", withExtension: "realm")
         
+        do {
+        guard let baseURL = baseURL else { fatalError() }
+            if !fileManger.fileExists(atPath: documentURL.path) {
+                try fileManger.copyItem(at: baseURL, to: documentURL)
+            }
+        
+            var config = Realm.Configuration()
+            config.objectTypes = [DayData2015.self]
+            config.fileURL = documentURL
+                
+            realm = try Realm(configuration: config)
+        
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     @IBAction func didPressUpdate(_ sender: Any) {

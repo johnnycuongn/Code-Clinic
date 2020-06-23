@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		401504A024A2725400AE3073 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4015049E24A2725400AE3073 /* Realm.framework */; };
+		401504A124A2725400AE3073 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4015049E24A2725400AE3073 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		401504A224A2725400AE3073 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4015049F24A2725400AE3073 /* RealmSwift.framework */; };
+		401504A324A2725400AE3073 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4015049F24A2725400AE3073 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		401504A924A27BB200AE3073 /* dayData.realm in Resources */ = {isa = PBXBuildFile; fileRef = 401504A824A27BB200AE3073 /* dayData.realm */; };
 		5227011D208540C30088EDC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227011C208540C30088EDC6 /* AppDelegate.swift */; };
 		5227011F208540C30088EDC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227011E208540C30088EDC6 /* ViewController.swift */; };
 		52270122208540C30088EDC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52270120208540C30088EDC6 /* Main.storyboard */; };
@@ -14,7 +19,25 @@
 		52270127208540CE0088EDC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52270125208540CE0088EDC6 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		401504A424A2725400AE3073 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				401504A324A2725400AE3073 /* RealmSwift.framework in Embed Frameworks */,
+				401504A124A2725400AE3073 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4015049E24A2725400AE3073 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Frameworks/Realm.framework; sourceTree = "<group>"; };
+		4015049F24A2725400AE3073 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Frameworks/RealmSwift.framework; sourceTree = "<group>"; };
+		401504A824A27BB200AE3073 /* dayData.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = dayData.realm; sourceTree = SOURCE_ROOT; };
 		52270119208540C30088EDC6 /* Lake Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lake Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5227011C208540C30088EDC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5227011E208540C30088EDC6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +52,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				401504A224A2725400AE3073 /* RealmSwift.framework in Frameworks */,
+				401504A024A2725400AE3073 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4015049D24A2725300AE3073 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4015049E24A2725400AE3073 /* Realm.framework */,
+				4015049F24A2725400AE3073 /* RealmSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		52270110208540C30088EDC6 = {
 			isa = PBXGroup;
 			children = (
 				5227011B208540C30088EDC6 /* Lake Weather */,
 				5227011A208540C30088EDC6 /* Products */,
+				4015049D24A2725300AE3073 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +94,7 @@
 				52270120208540C30088EDC6 /* Main.storyboard */,
 				52270123208540CE0088EDC6 /* Assets.xcassets */,
 				52270125208540CE0088EDC6 /* LaunchScreen.storyboard */,
+				401504A824A27BB200AE3073 /* dayData.realm */,
 				52270128208540CE0088EDC6 /* Info.plist */,
 			);
 			path = "Lake Weather";
@@ -74,6 +110,8 @@
 				52270115208540C30088EDC6 /* Sources */,
 				52270116208540C30088EDC6 /* Frameworks */,
 				52270117208540C30088EDC6 /* Resources */,
+				401504A424A2725400AE3073 /* Embed Frameworks */,
+				401504A524A2725C00AE3073 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -122,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				401504A924A27BB200AE3073 /* dayData.realm in Resources */,
 				52270127208540CE0088EDC6 /* LaunchScreen.storyboard in Resources */,
 				52270124208540CE0088EDC6 /* Assets.xcassets in Resources */,
 				52270122208540C30088EDC6 /* Main.storyboard in Resources */,
@@ -129,6 +168,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		401504A524A2725C00AE3073 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		52270115208540C30088EDC6 /* Sources */ = {
@@ -282,6 +341,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 645DPB2K5W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = "Lake Weather/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +363,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 645DPB2K5W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = "Lake Weather/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

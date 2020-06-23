@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,38 +16,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iul-P4-Pzl">
-                                <rect key="frame" x="0.0" y="37" width="375" height="162"/>
-                                <date key="date" timeIntervalSinceReferenceDate="347142899.23963928">
-                                    <!--2012-01-01 20:34:59 +0000-->
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iul-P4-Pzl">
+                                <rect key="frame" x="0.0" y="-16" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="441723600.23963928">
+                                    <!--2014-12-31 13:00:00 +0000-->
                                 </date>
-                                <date key="minimumDate" timeIntervalSinceReferenceDate="347108400">
-                                    <!--2012-01-01 11:00:00 +0000-->
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="441723600">
+                                    <!--2014-12-31 13:00:00 +0000-->
                                 </date>
-                                <date key="maximumDate" timeIntervalSinceReferenceDate="455104800">
-                                    <!--2015-06-04 10:00:00 +0000-->
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="473158800">
+                                    <!--2015-12-30 09:00:00 +0000-->
                                 </date>
                                 <connections>
                                     <action selector="startDateDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="yHT-a8-QYU"/>
                                 </connections>
                             </datePicker>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnK-Ms-ySJ">
-                                <rect key="frame" x="0.0" y="252" width="375" height="162"/>
-                                <date key="date" timeIntervalSinceReferenceDate="347142899.23964095">
-                                    <!--2012-01-01 20:34:59 +0000-->
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnK-Ms-ySJ">
+                                <rect key="frame" x="0.0" y="253" width="375" height="161"/>
+                                <date key="date" timeIntervalSinceReferenceDate="444315600.23964095">
+                                    <!--2015-01-30 13:00:00 +0000-->
                                 </date>
-                                <date key="minimumDate" timeIntervalSinceReferenceDate="347108400">
-                                    <!--2012-01-01 11:00:00 +0000-->
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="441810000">
+                                    <!--2015-01-01 13:00:00 +0000-->
                                 </date>
-                                <date key="maximumDate" timeIntervalSinceReferenceDate="455104800">
-                                    <!--2015-06-04 10:00:00 +0000-->
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="473259599">
+                                    <!--2015-12-31 12:59:59 +0000-->
                                 </date>
                                 <connections>
                                     <action selector="endDateDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="R2d-rj-zBA"/>
                                 </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kR-g1-aRW">
-                                <rect key="frame" x="16" y="8" width="78" height="21"/>
+                                <rect key="frame" x="16" y="-45" width="78" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ip6-Tv-VbP"/>
                                 </constraints>
@@ -59,7 +56,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smb-nh-p0e">
-                                <rect key="frame" x="16" y="231" width="70" height="21"/>
+                                <rect key="frame" x="16" y="232" width="70" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Gev-AP-myT"/>
                                 </constraints>
@@ -78,7 +75,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mean Temp." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1iD-98-vWc">
-                                <rect key="frame" x="16" y="477" width="342.5" height="21"/>
+                                <rect key="frame" x="16" y="477" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="6Nh-6D-6n9"/>
                                 </constraints>
@@ -87,7 +84,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mean Pressure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUW-8h-yue">
-                                <rect key="frame" x="16" y="535" width="342.5" height="21"/>
+                                <rect key="frame" x="16" y="535" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="anf-Xv-ll4"/>
                                 </constraints>
@@ -96,7 +93,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mean Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEa-lT-Gme">
-                                <rect key="frame" x="16" y="593" width="342.5" height="21"/>
+                                <rect key="frame" x="16" y="593" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="d7Q-2Z-bpC"/>
                                 </constraints>
@@ -105,7 +102,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Median Temp." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mu7-Au-PgI">
-                                <rect key="frame" x="16" y="506" width="342.5" height="21"/>
+                                <rect key="frame" x="16" y="506" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Dfz-s8-eoD"/>
                                 </constraints>
@@ -114,7 +111,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Median Pressure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRj-gB-4UI">
-                                <rect key="frame" x="16" y="564" width="342.5" height="21"/>
+                                <rect key="frame" x="16" y="564" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="XWY-3x-0Yp"/>
                                 </constraints>
@@ -123,7 +120,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Median Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nky-tv-Rwm">
-                                <rect key="frame" x="16" y="622" width="342.5" height="21"/>
+                                <rect key="frame" x="16" y="622" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="8zf-qe-Wgp"/>
                                 </constraints>
@@ -131,11 +128,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kV0-Yl-GrU">
+                            <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kV0-Yl-GrU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="J1A-lB-Gmd">
-                                        <rect key="frame" x="169.5" y="315" width="37" height="37"/>
+                                        <rect key="frame" x="169" y="315" width="37" height="37"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.8459171660958904" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -165,7 +162,6 @@
                             <constraint firstItem="1iD-98-vWc" firstAttribute="top" secondItem="yDy-fX-7Tv" secondAttribute="bottom" constant="17" id="Qbk-uY-UyI"/>
                             <constraint firstItem="Nky-tv-Rwm" firstAttribute="top" secondItem="uEa-lT-Gme" secondAttribute="bottom" constant="8" symbolic="YES" id="Qld-Id-ANH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uEa-lT-Gme" secondAttribute="trailing" constant="16" id="SXn-fj-KU8"/>
-                            <constraint firstItem="7kR-g1-aRW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-12" id="TDh-Od-J3s"/>
                             <constraint firstItem="yDy-fX-7Tv" firstAttribute="top" secondItem="XnK-Ms-ySJ" secondAttribute="bottom" constant="16" id="Wdv-LP-mdP"/>
                             <constraint firstItem="kV0-Yl-GrU" firstAttribute="leading" secondItem="XnK-Ms-ySJ" secondAttribute="leading" id="XKb-76-zdL"/>
                             <constraint firstItem="yDy-fX-7Tv" firstAttribute="centerX" secondItem="1iD-98-vWc" secondAttribute="centerX" id="XSA-ZF-kbt"/>
@@ -175,7 +171,6 @@
                             <constraint firstItem="UUW-8h-yue" firstAttribute="leading" secondItem="CRj-gB-4UI" secondAttribute="leading" id="c1r-dq-koL"/>
                             <constraint firstItem="kV0-Yl-GrU" firstAttribute="trailing" secondItem="Iul-P4-Pzl" secondAttribute="trailing" id="e5y-nm-YLb"/>
                             <constraint firstItem="yDy-fX-7Tv" firstAttribute="centerX" secondItem="XnK-Ms-ySJ" secondAttribute="centerX" id="eSR-DJ-JJM"/>
-                            <constraint firstItem="7kR-g1-aRW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="8" id="icG-qV-6eo"/>
                             <constraint firstItem="1iD-98-vWc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mu7-Au-PgI" secondAttribute="leading" id="l5e-U0-Cw7"/>
                             <constraint firstItem="kV0-Yl-GrU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nhb-nl-Ssj"/>
                             <constraint firstItem="7kR-g1-aRW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pCj-l8-8Qp"/>
