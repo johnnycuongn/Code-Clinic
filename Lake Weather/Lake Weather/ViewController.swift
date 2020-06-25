@@ -42,6 +42,39 @@ class ViewController: UIViewController {
         loadRealm()
     }
     
+    
+    @IBAction func didPressUpdate(_ sender: Any) {
+        activityView.isHidden = false
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            self.updateDays()
+            self.activityView.isHidden = true
+        }
+        
+    }
+    
+    @IBAction func startDateDidChange(_ sender: UIDatePicker) {
+        // make sure end date is after start date
+        if startPicker.date >= endPicker.date {
+            //print("start date is after end date")
+            endPicker.date = startPicker.date
+        }
+    }
+    @IBAction func endDateDidChange(_ sender: UIDatePicker) {
+        // make sure start date is before end date
+        if startPicker.date >= endPicker.date {
+            //print("start date is after end date")
+            startPicker.date = endPicker.date
+        }
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    // MARK: - Convinienve Methods
+    
+    // MARK: View loads
     func loadRealm() {
         let fileManger = FileManager.default
         let documentURL = fileManger.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("dayData.realm")
@@ -64,17 +97,56 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func didPressUpdate(_ sender: Any) {
-        activityView.isHidden = false
+    // MARK: Actions
+    
+    func updateDays() {
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-            self.updateDays()
-            self.activityView.isHidden = true
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMdd"
+        let startDate = Int(formatter.string(from: startPicker.date))
+        let endDate = Int(formatter.string(from: endPicker.date))
+        
+        let data: Results<DayData2015> = realm.objects(DayData2015.self).filter("date >= \(startDate!) && date <= \(endDate!)")
+        
+        //// Validate Data
+        if data.count < 2 {
+            showMessage(message: "Insufficient Data, please choose longer end date")
+            return
         }
+        
+        guard (data[0].date.value! == startDate) else {
+            showMessage(message: "No value for start date")
+            return
+        }
+        guard (data.last!.date.value! == endDate) else {
+            showMessage(message: "No value for end date")
+            return
+        }
+        ///
+            
+        updateDataLabel(from: data)
         
     }
     
-    func updateDays() {
+    func updateDataLabel(from data: Results<DayData2015>) {
+        var temps: [Double] = []
+        var speeds: [Double] = []
+        var pressures: [Double] = []
+        
+        for day: DayData2015 in data {
+            temps.append(day.AirTemp.value!)
+            speeds.append(day.WindSpeed.value!)
+            pressures.append(day.BarometricPress.value!)
+        }
+        
+        medianSpeedLabel.text = "Median Speed: "+String(format: "%.2f", median(of: speeds))
+        meanSpeedLabel.text = "Mean Speed: "+String(format: "%.2f", mean(of: speeds))
+        
+        medianTempLabel.text = "Median Temperature: "+String(format: "%.2f", median(of: temps))
+        meanTempLabel.text = "Mean Temperature: "+String(format: "%.2f", mean(of: temps))
+        
+        medianPressureLabel.text = "Median Pressure: "+String(format: "%.2f",median(of: pressures))
+        meanPressureLabel.text = "Mean Pressure: "+String(format: "%.2f",mean(of: pressures))
         
     }
     
@@ -85,31 +157,27 @@ class ViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func findMean(a:[Double]) -> Double {
-        return 0
-    }
+    // MARK: Helper Method
     
-    func findMedian(a:[Double]) -> Double {
-        return 0
-    }
-    
-    @IBAction func startDateDidChange(_ sender: UIDatePicker) {
-        // make sure end date is after start date
-        if startPicker.date >= endPicker.date {
-            //print("start date is after end date")
-            endPicker.date = startPicker.date
+    func mean(of a:[Double]) -> Double {
+        var sum = 0.0
+        
+        for i in 0...a.count-1 {
+            sum += a[i]
         }
-    }
-    @IBAction func endDateDidChange(_ sender: UIDatePicker) {
-        // make sure start date is before end date
-        if startPicker.date >= endPicker.date {
-            //print("start date is after end date")
-            startPicker.date = endPicker.date
-        }
+        
+        return sum/Double(a.count)
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
+    func median(of a:[Double]) -> Double {
+        var result: Double = 0
+        if a.count % 2 != 0 {
+            result = a.sorted()[(a.count + 1)/2]
+        } else if a.count % 2 == 0 {
+            result = (a.sorted()[a.count/2] + a.sorted()[a.count/2 + 1])/2
+        }
+        
+        return result
     }
     
     
